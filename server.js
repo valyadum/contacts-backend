@@ -51,11 +51,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import { app } from "./app.js";
-// import { DB_HOST } from "./config.js";
+import { DB_HOST } from "./config.js";
 //process.env.DB_HOST - місце знаходження ключа на сервері
- const DB_HOST = "mongodb+srv://valyadum:10122010Dum@cluster0.0q9ikbl.mongodb.net/db-contacts?retryWrites=true&w=majority"
+//  const DB_HOST = "mongodb+srv://valyadum:10122010Dum@cluster0.0q9ikbl.mongodb.net/db-contacts?retryWrites=true&w=majority"
 
-// const app = express();
 mongoose.connect(DB_HOST)
     .then(() => {
         app.listen(3000);
