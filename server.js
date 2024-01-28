@@ -51,13 +51,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import { app } from "./app.js";
+import 'dotenv/config';
+// import dotenv from "dotenv";
+// dotenv.config()
 // import { DB_HOST } from "./config.js";
 //process.env.DB_HOST - місце знаходження ключа на сервері
 //  const DB_HOST = "mongodb+srv://valyadum:10122010Dum@cluster0.0q9ikbl.mongodb.net/db-contacts?retryWrites=true&w=majority"
-const { DB_HOST } = process.env;
+const { DB_HOST, PORT=3000 } = process.env;
 mongoose.connect(DB_HOST)
     .then(() => {
-        app.listen(3000);
+        app.listen(PORT);
         console.log("Database connection successful");
     })
     .catch((err) => {
